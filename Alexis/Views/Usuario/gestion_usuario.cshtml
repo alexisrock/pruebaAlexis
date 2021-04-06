@@ -1,0 +1,115 @@
+﻿
+@{
+	ViewBag.Title = "gestion_usuario";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Gestion Usuario</h2>
+
+<div id="mensaje"></div>
+<div class="row">
+	<div class="col-md-3">
+		<label for="Direccion">documento</label>
+	</div>
+	<div class="col-md-3">
+		<input type="text" id="txtdocumento" name="txtdocumento" class="form-control" />
+	</div>
+	<div class="col-md-3">
+		<button type="button" class="btn btn-info" onclick="VerUsuario()">Consultar</button>
+	</div>
+
+	</div>
+<br />
+	<div class="d-flex flex-wrap flex-row">
+
+		<div class="table-responsive">
+
+			<table class="table table-bordered table-striped" id="tblUsuario">
+				<thead>
+					<tr>
+						<th>Imagen</th>
+						<th>Documento</th>
+						<th>Nombres</th>
+						<th>Apellidos</th>
+						<th>Telefono</th>
+						<th>Direccion</th>
+						<th>Fecha Nacimiento</th>
+						<th>Accion</th>
+					</tr>
+
+				</thead>
+				<tbody></tbody>
+
+			</table>
+
+		</div>
+
+	</div>
+	<div class="modal fade" id="ModalEditUsuarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title" id="exampleModalLabel">Editar Usuario</h2>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="formedit">
+
+
+						<div class="form-row">
+
+							<input id="editid" type="hidden" />
+
+							<div class="form-group col-sm-6">
+								<label for="editDocumento">Cedula</label>
+								<input id="editDocumento" type="text" class="form-control" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="editNombre">Nombre</label>
+								<input id="editNombre" type="text" class="form-control" />
+
+							</div>
+
+
+						</div>
+						<div class="form-row">
+
+							<div class="form-group col-sm-6">
+								<label for="editApellidos">Apellidos</label>
+								<input id="editApellidos" type="text" class="form-control" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="editTelefono">Telefono</label>
+								<input id="editTelefono" type="text" class="form-control" />
+							</div>
+
+
+						</div>
+						<div class="form-row">
+
+							<div class="form-group col-sm-6">
+								<label for="editDirecion">Direccion</label>
+								<input id="editDirecion" type="text" class="form-control" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="editfechanacimiento" class="form-check-label">Fecha Nacimiento</label>
+								<input id="editfechanacimiento" type="date" class="form-control" />
+
+							</div>
+						</div>
+
+					</form>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button class="btn btn-primary" onclick="GuardarUsuario()">Guardar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+	<script src="~/Scripts/jquery.dataTables.min.js"></script>
+	<script src="~/Scripts/gestionarchivosjs.js"></script>

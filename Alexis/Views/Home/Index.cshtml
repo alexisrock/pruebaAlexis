@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Usuarios</h2>
+        <p>  Creacion de usuarios </p>
+		<p>@Html.ActionLink("Crear Usuario", "Creacion_usuario", "Usuario")</p>
+    </div>
+	<div class="col-md-4">
+		<h2>Gestion de Usuario</h2>
+		<p>  Gestion de usuarios </p>
+		<p>@Html.ActionLink("Gestion de Usuario", "gestion_usuario", "Usuario")</p>
+	</div>
+
+</div>
